@@ -176,3 +176,6 @@ if __name__ == "__main__":
         host="0.0.0.0",
         port=port
     )
+    @app.get("/")
+def health():
+    return {"status": "RAG API running"}
