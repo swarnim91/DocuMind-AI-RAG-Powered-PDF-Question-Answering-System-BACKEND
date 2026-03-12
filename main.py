@@ -165,3 +165,14 @@ inngest.fast_api.serve(
     [rag_ingest_pdf, rag_query_pdf_ai],
     serve_path="/api/inngest"
 )
+if __name__ == "__main__":
+    import uvicorn
+    import os
+
+    port = int(os.environ.get("PORT", 8000))
+
+    uvicorn.run(
+        "main:app",
+        host="0.0.0.0",
+        port=port
+    )
